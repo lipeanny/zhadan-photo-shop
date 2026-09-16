@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>0.1元购买鼠鼠照片</title>
-  <meta name="description" content="只要0.1元，购买一张可爱鼠鼠照片。扫码支付即可。" />
+  <title>0.1元购买鼠鼠艳照</title>
+  <meta name="description" content="只要0.1元，带可爱鼠鼠回家。" />
   <meta name="theme-color" content="#f4f1ea" />
 
   <!-- QQ/通用分享卡片 -->
-  <meta itemprop="name" content="0.1元购买鼠鼠照片">
-  <meta itemprop="description" content="只要0.1元，购买一张可爱鼠鼠照片。">
+  <meta itemprop="name" content="0.1元购买鼠鼠艳照">
+  <meta itemprop="description" content="只要0.1元，带可爱鼠鼠回家。">
   <meta itemprop="image" content="https://lipeanny.github.io/mouse-photo-shop/hamster.jpg">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="鼠鼠照片商店" />
-  <meta property="og:title" content="0.1元购买鼠鼠照片" />
-  <meta property="og:description" content="只要0.1元，购买一张可爱鼠鼠照片。扫码支付即可。" />
+  <meta property="og:site_name" content="鼠鼠艳照" />
+  <meta property="og:title" content="0.1元购买鼠鼠艳照" />
+  <meta property="og:description" content="只要0.1元，带可爱鼠鼠回家。" />
   <meta property="og:image" content="https://lipeanny.github.io/mouse-photo-shop/hamster.jpg" />
   <meta property="og:image:secure_url" content="https://lipeanny.github.io/mouse-photo-shop/hamster.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -25,8 +25,8 @@
 
   <!-- Twitter / 其他平台兼容 -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="0.1元购买鼠鼠照片" />
-  <meta name="twitter:description" content="只要0.1元，购买一张可爱鼠鼠照片。扫码支付即可。" />
+  <meta name="twitter:title" content="0.1元购买鼠鼠艳照" />
+  <meta name="twitter:description" content="只要0.1元，带可爱鼠鼠回家。" />
   <meta name="twitter:image" content="https://lipeanny.github.io/mouse-photo-shop/hamster.jpg" />
 
   <!-- canonical -->
@@ -110,36 +110,102 @@
       .price{font-size:26px}
       .hero-badge{right:12px;bottom:12px;font-size:13px;padding:10px 14px}
     }
-  </style>
+  
+    .share-row{
+      display:flex;
+      gap:12px;
+      margin-top:16px;
+    }
+    .share-btn,.copy-btn{
+      flex:1;
+      border:0;
+      border-radius:16px;
+      padding:15px 18px;
+      font-size:16px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .share-btn{
+      background:#12b76a;
+      color:#fff;
+    }
+    .copy-btn{
+      background:#f1f1ef;
+      color:#242424;
+    }
+
+</style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
       <div class="hero">
-        <img src="hamster.jpg" alt="鼠鼠照片">
-        <div class="hero-badge">鼠鼠照片 · ¥0.10</div>
+        <img src="hamster.jpg" alt="鼠鼠艳照">
+        <div class="hero-badge">鼠鼠艳照 · ¥0.10</div>
       </div>
 
       <div class="content">
         <div class="topline">
-          <h1>鼠鼠照片 · 数字商品</h1>
+          <h1>鼠鼠艳照</h1>
           <div class="price">¥0.10</div>
         </div>
 
         <p class="desc">
           支付 0.1 元即可购买一张可爱鼠鼠照片。
-          你也可以支付1元获取一段可爱鼠鼠的视频😊
+         1元可购买一段可爱鼠鼠视频😊
         </p>
 
         <section class="pay-box">
           <div class="pay-title">微信扫码支付 ¥0.10</div>
           <p class="pay-sub">长按保存 / 使用另一台设备扫码</p>
           <img src="wechat-pay.jpg" alt="微信收款码">
-          <div class="tip">支付后请凭支付记录领取照片。</div>
+          <div class="tip">支付后凭付款记录领取照片。</div>
         </section>
+
+        <div class="share-row">
+          <button class="share-btn" onclick="sharePage()">分享给好友</button>
+          <button class="copy-btn" onclick="copyLink()">复制链接</button>
+        </div>
       </div>
     </section>
     <div class="foot">Digital photo · ¥0.10</div>
   </main>
+
+<script>
+  const SHARE_URL = "https://lipeanny.github.io/mouse-photo-shop/";
+
+  async function sharePage() {
+    const shareData = {
+      title: "0.1元购买鼠鼠艳照",
+      text: "只要0.1元，带可爱鼠鼠回家。",
+      url: SHARE_URL
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // 用户取消分享时不做处理
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(SHARE_URL);
+        alert("当前浏览器不支持系统分享，链接已复制。请打开 QQ 后粘贴发送。");
+      } catch (err) {
+        prompt("复制下面的链接并发送到 QQ：", SHARE_URL);
+      }
+    }
+  }
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(SHARE_URL);
+      alert("链接已复制");
+    } catch (err) {
+      prompt("请复制下面的链接：", SHARE_URL);
+    }
+  }
+</script>
+
 </body>
 </html>
