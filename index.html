@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>0.1元购买鼠鼠照片</title>
+  <meta name="description" content="只要0.1元，购买一张可爱鼠鼠照片。" />
+
+  <!-- 部署后，把 YOUR-DOMAIN 替换为你的正式域名 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="0.1元购买鼠鼠照片" />
+  <meta property="og:description" content="只要0.1元，购买一张可爱鼠鼠照片。" />
+  <meta property="og:image" content="https://YOUR-DOMAIN/hamster.jpg" />
+  <meta property="og:url" content="https://YOUR-DOMAIN/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="0.1元购买鼠鼠照片" />
+  <meta name="twitter:description" content="只要0.1元，购买一张可爱鼠鼠照片。" />
+  <meta name="twitter:image" content="https://YOUR-DOMAIN/hamster.jpg" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      background:#f4f1ea;
+      font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+      color:#1f1f22;
+    }
+    .wrap{width:min(92vw,760px);padding:32px 0 56px}
+    .card{
+      overflow:hidden;border-radius:28px;background:#fff;
+      box-shadow:0 22px 70px rgba(30,28,22,.12);
+      border:1px solid rgba(30,30,30,.06)
+    }
+    .hero{
+      position:relative;
+      aspect-ratio:4/3;
+      background:#eee;
+      overflow:hidden
+    }
+    .hero img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center 40%
+    }
+    .hero-badge{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:rgba(18,18,18,.88);
+      color:#fff;
+      font-weight:700;
+      font-size:15px;
+      backdrop-filter:blur(6px)
+    }
+    .content{padding:24px 26px 30px}
+    .topline{
+      display:flex;align-items:flex-end;
+      justify-content:space-between;gap:18px
+    }
+    h1{margin:0;font-size:28px;line-height:1.25}
+    .price{white-space:nowrap;font-size:30px;font-weight:800;color:#d84e38}
+    .desc{margin:14px 0 0;color:#66625e;line-height:1.75;font-size:15px}
+    .pay-box{
+      margin-top:22px;
+      padding:18px;
+      border-radius:20px;
+      background:#f7fbf8;
+      border:1px solid #dcefe3;
+      text-align:center
+    }
+    .pay-title{font-weight:800;font-size:17px;margin-bottom:12px}
+    .pay-sub{color:#6b726d;font-size:13px;margin:0 0 14px}
+    .pay-box img{
+      display:block;
+      width:min(100%,420px);
+      margin:0 auto;
+      border-radius:16px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08)
+    }
+    .tip{margin-top:12px;color:#6f6a63;font-size:13px;line-height:1.65}
+    .foot{text-align:center;margin-top:16px;color:#9b958c;font-size:12px}
+    @media(max-width:560px){
+      .wrap{width:94vw;padding-top:18px}
+      .card{border-radius:22px}
+      .content{padding:20px}
+      .topline{align-items:flex-start;flex-direction:column;gap:8px}
+      h1{font-size:24px}
+      .price{font-size:26px}
+      .hero-badge{right:12px;bottom:12px;font-size:13px;padding:10px 14px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="hero">
+        <img src="hamster.jpg" alt="鼠鼠照片">
+        <div class="hero-badge">鼠鼠照片 · ¥0.10</div>
+      </div>
+
+      <div class="content">
+        <div class="topline">
+          <h1>鼠鼠照片 · 数字商品</h1>
+          <div class="price">¥0.10</div>
+        </div>
+
+        <p class="desc">
+          支付 0.1 元即可购买一张可爱鼠鼠照片。
+          下方直接展示微信收款码，不再跳转到外部购买链接。
+        </p>
+
+        <section class="pay-box">
+          <div class="pay-title">微信扫码支付 ¥0.10</div>
+          <p class="pay-sub">长按保存 / 使用另一台设备扫码</p>
+          <img src="wechat-pay.jpg" alt="微信收款码">
+          <div class="tip">支付后请按约定方式领取照片。</div>
+        </section>
+      </div>
+    </section>
+    <div class="foot">Digital photo · ¥0.10</div>
+  </main>
+</body>
+</html>
